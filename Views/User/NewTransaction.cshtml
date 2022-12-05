@@ -1,0 +1,66 @@
+﻿@model E_banking.Models.bill
+@{
+    ViewBag.Title = "NewTransaction";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Login.css" rel="stylesheet" />
+<div class="loginForm">
+    <div class="formCSS">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal" style="display : block;">
+
+                <h2> Transfer Money </h2>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.user_id)
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.type_id, "Bill Type", htmlAttributes: new { @class = "control-label col-md-12" })
+                    <div class="col-md-12 userDropDownButton">
+                        @Html.DropDownListFor(model => model.type_id, new List<SelectListItem>
+                        {
+                            new SelectListItem{ Text = "gas" , Value ="1"},
+                            new SelectListItem{ Text = "water" , Value ="2"},
+                            new SelectListItem{ Text = "electricity" , Value = "3" },
+                        }, "Select Bill Type",
+                        htmlAttributes: new { @class = "control-label col-md-2" })
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.code_number, htmlAttributes: new { @class = "control-label col-md-12" })
+                    <div class="col-md-12 password">
+                        @Html.TextBoxFor(model => model.code_number, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.code_number, "", new { @class = "text-danger control-label col-md-12" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.amount, htmlAttributes: new { @class = "control-label col-md-12" })
+                    <div class="col-md-12 password">
+                        @Html.TextBoxFor(model => model.amount, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.amount, "", new { @class = "text-danger control-label col-md-12" })
+
+                </div>
+
+
+                <div class="col-md-12">
+                    <input type="submit" value="Pay Bill" class="btn btn-info userButton" />
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+
+

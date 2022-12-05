@@ -1,0 +1,47 @@
+﻿@model E_banking.Models.Person
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Login.css" rel="stylesheet" />
+<div class="loginForm">
+    <div class="formCSS">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal" style="display : block;">
+
+                <h2> Login </h2>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "control-label col-md-12" })
+                    <div class="col-md-12 password">
+                        @Html.TextBoxFor(model => model.username, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger control-label col-md-12" })
+                    <!-- <label class="text-danger control-label col-md-12" style="font-weight: 600;">ViewBag.EmaiError</label>-->
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-12" })
+                    <div class="col-md-12 password">
+                        @Html.PasswordFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger control-label col-md-12" })
+                    <label class="text-danger control-label col-md-12" style="font-weight: 600;">@ViewBag.PasswordError</label>
+                </div>
+
+                <div class="col-md-12">
+                    <input type="submit" value="Log In" class="btn btn-info userButton" />
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="E_bankingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="bill">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="amount" Type="Double" Nullable="false" />
+    <Property Name="code_number" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Bill_Type" Relationship="Self.FK__bill__amount__403A8C7D" FromRole="bill" ToRole="Bill_Type" />
+    <NavigationProperty Name="user" Relationship="Self.FK__bill__user_id__412EB0B6" FromRole="bill" ToRole="users" />
+  </EntityType>
+  <EntityType Name="Bill_Type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="bills" Relationship="Self.FK__bill__amount__403A8C7D" FromRole="Bill_Type" ToRole="bill" />
+  </EntityType>
+  <EntityType Name="feedback">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="message" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="user" Relationship="Self.FK__feedback__user_i__440B1D61" FromRole="feedback" ToRole="users" />
+  </EntityType>
+  <EntityType Name="Transcation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sender_id" Type="Int32" Nullable="false" />
+    <Property Name="receiver_id" Type="Int32" Nullable="false" />
+    <Property Name="amount" Type="Double" Nullable="false" />
+    <NavigationProperty Name="user" Relationship="Self.FK__Transcati__recei__3B75D760" FromRole="Transcation" ToRole="users" />
+    <NavigationProperty Name="user1" Relationship="Self.FK__Transcati__sende__3A81B327" FromRole="Transcation" ToRole="users" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="acc_Number" />
+    </Key>
+    <Property Name="acc_Number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="balance" Type="Double" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="bills" Relationship="Self.FK__bill__user_id__412EB0B6" FromRole="users" ToRole="bill" />
+    <NavigationProperty Name="feedbacks" Relationship="Self.FK__feedback__user_i__440B1D61" FromRole="users" ToRole="feedback" />
+    <NavigationProperty Name="Transcations" Relationship="Self.FK__Transcati__recei__3B75D760" FromRole="users" ToRole="Transcation" />
+    <NavigationProperty Name="Transcations1" Relationship="Self.FK__Transcati__sende__3A81B327" FromRole="users" ToRole="Transcation" />
+  </EntityType>
+  <Association Name="FK__bill__amount__403A8C7D">
+    <End Role="Bill_Type" Type="Self.Bill_Type" Multiplicity="1" />
+    <End Role="bill" Type="Self.bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill_Type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="bill">
+        <PropertyRef Name="type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__bill__user_id__412EB0B6">
+    <End Role="users" Type="Self.user" Multiplicity="1" />
+    <End Role="bill" Type="Self.bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="acc_Number" />
+      </Principal>
+      <Dependent Role="bill">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__feedback__user_i__440B1D61">
+    <End Role="users" Type="Self.user" Multiplicity="1" />
+    <End Role="feedback" Type="Self.feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="acc_Number" />
+      </Principal>
+      <Dependent Role="feedback">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transcati__recei__3B75D760">
+    <End Role="users" Type="Self.user" Multiplicity="1" />
+    <End Role="Transcation" Type="Self.Transcation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="acc_Number" />
+      </Principal>
+      <Dependent Role="Transcation">
+        <PropertyRef Name="receiver_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transcati__sende__3A81B327">
+    <End Role="users" Type="Self.user" Multiplicity="1" />
+    <End Role="Transcation" Type="Self.Transcation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="acc_Number" />
+      </Principal>
+      <Dependent Role="Transcation">
+        <PropertyRef Name="sender_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="E_bankingEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="bills" EntityType="Self.bill" />
+    <EntitySet Name="Bill_Type" EntityType="Self.Bill_Type" />
+    <EntitySet Name="feedbacks" EntityType="Self.feedback" />
+    <EntitySet Name="Transcations" EntityType="Self.Transcation" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <AssociationSet Name="FK__bill__amount__403A8C7D" Association="Self.FK__bill__amount__403A8C7D">
+      <End Role="Bill_Type" EntitySet="Bill_Type" />
+      <End Role="bill" EntitySet="bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK__bill__user_id__412EB0B6" Association="Self.FK__bill__user_id__412EB0B6">
+      <End Role="users" EntitySet="users" />
+      <End Role="bill" EntitySet="bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK__feedback__user_i__440B1D61" Association="Self.FK__feedback__user_i__440B1D61">
+      <End Role="users" EntitySet="users" />
+      <End Role="feedback" EntitySet="feedbacks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transcati__recei__3B75D760" Association="Self.FK__Transcati__recei__3B75D760">
+      <End Role="users" EntitySet="users" />
+      <End Role="Transcation" EntitySet="Transcations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transcati__sende__3A81B327" Association="Self.FK__Transcati__sende__3A81B327">
+      <End Role="users" EntitySet="users" />
+      <End Role="Transcation" EntitySet="Transcations" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

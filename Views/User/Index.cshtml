@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<span class="label label-info">@Html.ActionLink("New Transaction", "Index", "UserController")</span>
+<span class="label label-info">@Html.ActionLink("Transfer Money", "Index", "UserController")</span>
+<span class="label label-info">@Html.ActionLink("View Balance", "Index", "UserController")</span>
+<span class="label label-danger">@Html.ActionLink("View Transaction", "Index", "UserController")</span>
+

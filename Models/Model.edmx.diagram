@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="027375bed0454b27aa853a24ecdec5c5" Name="Diagram1">
+        <EntityTypeShape EntityType="E_BankingModel.Admin" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_BankingModel.bill" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_BankingModel.Bill_Type" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_BankingModel.Customer" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_BankingModel.feedback" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_BankingModel.Transcation" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <AssociationConnector Association="E_BankingModel.FK__bill__type_id__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="E_BankingModel.FK__bill__user_id__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="E_BankingModel.FK__feedback__user_i__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="E_BankingModel.FK__Transcati__recei__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="E_BankingModel.FK__Transcati__sende__3A81B327" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
