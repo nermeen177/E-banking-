@@ -11,11 +11,14 @@ namespace E_banking.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class feedback
     {
         public int id { get; set; }
         public int user_id { get; set; }
+
+        [Required(ErrorMessage = "You have to enter a feedback.")]
         public string message { get; set; }
     
         public virtual Customer Customer { get; set; }

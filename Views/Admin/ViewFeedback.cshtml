@@ -1,0 +1,12 @@
+﻿@model List<E_banking.Models.feedback>
+@{
+    ViewBag.Title = "ViewFeedback";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (var X in Model)
+{
+    <h2>@X.message</h2>
+}
+
+

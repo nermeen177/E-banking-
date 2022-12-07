@@ -31,17 +31,22 @@ namespace E_banking.Controllers
 
             if (customer.Count == 0 && admin.Count == 1)
             {
-                return RedirectToAction("Index","Admin", new { id=admin[0].id });
+                return RedirectToAction("Index","Admin");
             }
             else if (customer.Count == 1 && admin.Count == 0)
             {
-                return RedirectToAction("Index", "User", new { id = customer[0] });
+                return RedirectToAction("Index", "User", new { id = customer[0].acc_Number });
+            }
+            else if(((person.username != null && person.password != null )) && (customer.Count == 0 && admin.Count == 0))
+            {
+                ViewBag.Error = "Wrong Username or Password";
+                return View();
             }
             else
                 return View();
 
+
         }
-        
 
     }
 }

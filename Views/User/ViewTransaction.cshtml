@@ -1,8 +1,15 @@
-﻿
+﻿@model E_banking.Models.ViewTransaction
 @{
     ViewBag.Title = "ViewTransaction";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ViewTransaction</h2>
+
+<h2>@Model.Transcation.receiver_id</h2>
+<p>@Model.Transcation.sender_id</p>
+<p>@Model.Transcation.amount</p>
+<p>@Model.Bill.amount</p>
+<p>@Model.Bill.code_number</p>
+
+
 

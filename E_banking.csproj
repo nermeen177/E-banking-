@@ -168,6 +168,7 @@
     <Compile Include="Models\Transcation.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewTransaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -175,12 +176,16 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Login.css" />
+    <Content Include="Content\login.css" />
     <Content Include="Content\user.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\b2.png" />
+    <Content Include="Images\b3.png" />
+    <Content Include="Images\gif back2.jpg" />
+    <Content Include="Images\home.jpeg" />
     <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -229,10 +234,13 @@
     <Content Include="Views\User\TransferMoney.cshtml" />
     <Content Include="Views\User\ViewBalance.cshtml" />
     <Content Include="Views\User\ViewTransaction.cshtml" />
+    <Content Include="Views\User\AddFeedback.cshtml" />
+    <Content Include="Views\Admin\AddUser.cshtml" />
+    <Content Include="Views\Admin\ViewFeedback.cshtml" />
+    <Content Include="Views\Admin\ViewDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

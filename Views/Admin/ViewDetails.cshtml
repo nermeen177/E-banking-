@@ -1,0 +1,30 @@
+﻿@model E_banking.Models.Customer
+@{
+    ViewBag.Title = "ViewDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("ViewDetails", "Admin", FormMethod.Post))
+{
+    <center>
+        @Html.TextBox("id", null, new { @style = "width:70%; margin:30px;padding:20px;height:30px; outline:none;", @placeholder = "Search for user" })
+        <input class="btn btn-info" type="submit" value="Search" />
+    </center>
+}
+
+<hr />
+
+@if (Model != null)
+{
+    <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-3">
+            <div class="thumbnail" style="height:380px; position:relative; overflow:hidden;">
+                <p>@Model.name</p>
+                <p>@Model.gender</p>
+
+            </div>
+        </div>
+    </div>
+}
+
+
