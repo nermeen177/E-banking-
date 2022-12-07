@@ -3,8 +3,10 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="~/Content/user.css" rel="stylesheet" />
 
-<span class="label label-info">@Html.ActionLink("New Transaction", "NewTransaction", "User")</span>
+
+<span class="label label-info">@Html.ActionLink("New Transaction", "NewTransaction", "User", new { @class = "buttonLink" })</span>
 <span class="label label-info">@Html.ActionLink("Transfer Money", "TransferMoney", "User")</span>
 <span class="label label-info">@Html.ActionLink("View Balance", "ViewBalance", "User")</span>
 <span class="label label-danger">@Html.ActionLink("View Transaction", "ViewTransaction", "User")</span>
