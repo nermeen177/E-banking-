@@ -186,6 +186,7 @@
     <Content Include="Images\b3.png" />
     <Content Include="Images\gif back2.jpg" />
     <Content Include="Images\home.jpeg" />
+    <Content Include="Images\loginB.jpg" />
     <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
