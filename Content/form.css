@@ -4,18 +4,23 @@
     background: url('../Images/loginB.jpg') no-repeat center center/cover;
 }
 #transferPage {
-    background: url('../Images/nnnn.png') no-repeat center center/cover;
+    background: url('../Images/transferB.png') no-repeat center center/cover;
     padding-top: 30px;
     padding-bottom: 20px;
 }
 #transactionPage {
-    background: url('../Images/mmm1.png') no-repeat center center/cover;
+    background: url('../Images/billB.png') no-repeat center center/cover;
     padding-top: 30px;
     padding-bottom: 20px;
 }
-.dropList
-{
-    background:transparent
+#addUserPage {
+    background: url('../Images/addUserB.jpg') no-repeat center center/cover;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    min-height: 100vh;
+}
+.dropList {
+    background: transparent
 }
 h1 {
     color: white;
@@ -66,10 +71,6 @@ textarea {
     margin-top: 30px;
     margin-bottom: 40px;
     background-color: #0A1219
-}
-.userButton:hover
-{
-    color:lightgray
 }
 
     .text-danger {

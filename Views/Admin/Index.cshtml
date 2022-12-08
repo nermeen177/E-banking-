@@ -10,9 +10,9 @@
     <h1>E-Banking</h1>
     <hr />
     <br />
-    <div class="transactionContainer">
+    <div class="transactionContainer" id="admin">
         <div class="row">
-            <div class="col-xs-3 col-md-3 col">
+            <div class="col-xs-11 col-md-3 col">
                 <div class="inner">
                    
                     <center><span class="glyphicon glyphicon-user" aria-hidden="true"></span></center>
@@ -20,13 +20,13 @@
                 </div>
             </div>
 
-            <div class="col-xs-3 col-md-3 col">
+            <div class="col-xs-11 col-md-3 col">
                 <div class="inner">
                     <center><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></center>
                     <span class="label button">@Html.ActionLink("View Feedback", "ViewFeedback", "Admin", new { @class = "link" })</span>
                 </div>
             </div>
-            <div class="col-xs-3 col-md-3 col">
+            <div class="col-xs-11 col-md-3 col">
                 <div class="inner">
                     <center><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></center>
                     <span class="label button">@Html.ActionLink("View User's Details", "ViewDetails", "Admin", new { @class = "link" })</span>

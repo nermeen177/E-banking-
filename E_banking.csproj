@@ -178,14 +178,16 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\form.css" />
     <Content Include="Content\personPage.css" />
+    <Content Include="Content\userDetails.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\loginB.jpg" />
-    <Content Include="Images\mmm1.png" />
-    <Content Include="Images\nnnn.png" />
+    <Content Include="Images\billB.png" />
+    <Content Include="Images\transferB.png" />
     <Content Include="Images\personB.jpg" />
+    <Content Include="Images\addUserB.jpg" />
     <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>

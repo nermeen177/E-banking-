@@ -21,7 +21,7 @@
 
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.sender_id, "Source Account-Number", htmlAttributes: new { @class = "control-label col-md-12" })
+                        @Html.LabelFor(model => model.sender_id, "From Account", htmlAttributes: new { @class = "control-label col-md-12" })
                         <div class="col-md-12 password">
                             <input type="text" readonly value="@ViewBag.senderId" class="form-control" />
                         </div>
@@ -34,7 +34,7 @@
 
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.receiver_id, "Destination Account-Number", htmlAttributes: new { @class = "control-label col-md-12" })
+                        @Html.LabelFor(model => model.receiver_id, "To Account", htmlAttributes: new { @class = "control-label col-md-12" })
                         <div class="col-md-12 password">
                             @Html.TextBoxFor(model => model.receiver_id, new { @class = "form-control" })
                         </div>

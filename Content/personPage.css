@@ -1,8 +1,10 @@
 ﻿body {
     /*background-color: darkcyan;*/
     background: url('../Images/personB.jpg') no-repeat center center/cover;
-   /* background-color: #004241*/
+    /* background-color: #004241*/
+    min-height: 100vh;
 }
+
 h1 {
     color: white;
     text-shadow: 2px 2px black;
@@ -11,28 +13,38 @@ h1 {
     margin-bottom: 50px;
     text-align: center;
 }
+#admin
+{
+    margin-top:9%
+}
 .row {
     margin: 20px;
     text-align: center;
-    /*  border:2px solid blue*/
 }
+
 .col {
-    /*border: 2px solid #0A1219;*/
-    height: 150px;
-    margin: auto 4%
-}
-.inner {
-    position: relative;
-    /* border: 2px solid #0A1219;*/
     box-shadow: 1px 1px 5px 1.2px lightgrey;
-    height: inherit;
-    padding: 20px;
-    color: white;
+    height: 155px;
+    margin: auto 4%;
+    margin-bottom:30px;
     background-color: rgba(255,255,255,.1);
     backdrop-filter: blur(6px);
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
+    .col:hover {
+        cursor: pointer;
+        height: 160px;
+        background-color: rgba(255,255,255,.2);
+        transition:ease-in-out;
+        transition-duration:0.15s
+    }
+
+    .inner {
+        position: relative;
+        height: inherit;
+        padding: 20px;
+    }
 .button {
     background-color: #0A1219;
     color: white;
@@ -44,12 +56,29 @@ h1 {
 .link {
     color: white;
 }
-.link:hover {
-    text-decoration: none;
-    color:darkgray
-}
+    .link:hover {
+        text-decoration: none;
+    }
 .glyphicon {
     font-size: 45px;
     color: white;
     text-shadow: 1px 1px black;
+}
+footer {
+    position: absolute;
+    bottom: 5px;
+    width: inherit
+}
+
+
+@media screen and (max-width: 991px) {
+    footer {
+        position: relative;
+    }
+    .row {
+        margin: 0px;
+    }
+    #admin, transactionContainer {
+        margin-top: 15px
+    }
 }

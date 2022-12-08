@@ -45,9 +45,17 @@ namespace E_banking.Controllers
         [HttpPost]
         public ActionResult ViewDetails(string id)
         {
-            int newId = int.Parse(id);
-            customer = db.Customers.Where(a => a.acc_Number == newId).FirstOrDefault();
-            return View(customer);
+            if(String.IsNullOrEmpty(id))
+            {
+                return View();
+            }
+            else
+            {
+                int newId = int.Parse(id);
+                customer = db.Customers.Where(a => a.acc_Number == newId).FirstOrDefault();
+                return View(customer);
+            }
+            
         }
         
 

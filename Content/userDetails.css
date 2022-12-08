@@ -1,0 +1,72 @@
+﻿#userDetailsPage {
+    background: url('../Images/addUserB.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    color: white;
+}
+.searchBox {
+    width: 50%;
+    margin: 20px;
+    padding: 20px;
+    height: 30px;
+    outline: none;
+    background: transparent;
+    color: white;
+    border-color: white;
+    margin-top: 50px
+}
+
+    .searchBox:focus {
+        border-color: #66afe9
+    }
+    .btn {
+        background-color: #0A1219;
+        color: white;
+        padding:13px;
+        width:100px;
+    }
+        .btn:hover
+        {
+            color:white
+        }
+        .thumbnail {
+            border: none
+        }
+.row {
+    box-shadow: 1px 1px 5px 1.2px lightgrey;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    margin: auto;
+    background-color: rgba(255,255,255,.1);
+    backdrop-filter: blur(12px);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px black;
+}
+.thumbnail {
+    background: transparent;
+}
+span {
+    font-size: 20px;
+    text-shadow: 1px 1px black;
+}
+p {
+    font-size: 18px
+}
+footer {
+    position: absolute;
+    bottom: 5px;
+    width: inherit
+}
+
+
+@media screen and (max-width: 991px) {
+    footer {
+        position: relative;
+    }
+
+}

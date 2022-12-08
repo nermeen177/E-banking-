@@ -3,28 +3,54 @@
     ViewBag.Title = "ViewDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="~/Content/userDetails.css" rel="stylesheet" />
+<body id="userDetailsPage">
+    <script>
+        var searchKey = document.gitElementById('search').value;
+    </script>
+    @using (Html.BeginForm("ViewDetails", "Admin", FormMethod.Post))
+    {
+        <center>
+            @Html.TextBox("id", null, new
+            {
+                @class = "searchBox",
+           @placeholder = "Search for user",
+           @id = "search"
+        })
+            <input class="btn" type="submit" value="Search" />
+        </center>
+        <hr style="margin-bottom:50px" />
+    }
 
-@using (Html.BeginForm("ViewDetails", "Admin", FormMethod.Post))
-{
-    <center>
-        @Html.TextBox("id", null, new { @style = "width:70%; margin:30px;padding:20px;height:30px; outline:none;", @placeholder = "Search for user" })
-        <input class="btn btn-info" type="submit" value="Search" />
-    </center>
-}
 
-<hr />
-
-@if (Model != null)
-{
-    <div class="row">
-        <div class="col-xs-6 col-sm-4 col-md-3">
-            <div class="thumbnail" style="height:380px; position:relative; overflow:hidden;">
-                <p>@Model.name</p>
-                <p>@Model.gender</p>
-
+    <h1>
+        User's Details
+    </h1>
+    @if (Model != null)
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-5 col" style="background: transparent">
+                    <div class="thumbnail">
+                        <p><span>Name: </span>@Model.name</p>
+                        <p><span>Username: </span>@Model.username</p>
+                        <p><span>Password: </span>@Model.password</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-5 col">
+                    <div class="thumbnail">
+                        <p><span>Gender: </span>@Model.gender</p>
+                        <p><span>Email: </span>@Model.email</p>
+                        <p><span>Balance: </span>@Model.balance</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-}
+    }
+    else
+    {
+        <center> <p>Enter Valid Account-Number To Show The Details</p></center>
+    }
 
 
+</body>
