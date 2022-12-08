@@ -1,0 +1,55 @@
+﻿body {
+    /*background-color: darkcyan;*/
+    background: url('../Images/personB.jpg') no-repeat center center/cover;
+   /* background-color: #004241*/
+}
+h1 {
+    color: white;
+    text-shadow: 2px 2px black;
+}
+.transactionContainer {
+    margin-bottom: 50px;
+    text-align: center;
+}
+.row {
+    margin: 20px;
+    text-align: center;
+    /*  border:2px solid blue*/
+}
+.col {
+    /*border: 2px solid #0A1219;*/
+    height: 150px;
+    margin: auto 4%
+}
+.inner {
+    position: relative;
+    /* border: 2px solid #0A1219;*/
+    box-shadow: 1px 1px 5px 1.2px lightgrey;
+    height: inherit;
+    padding: 20px;
+    color: white;
+    background-color: rgba(255,255,255,.1);
+    backdrop-filter: blur(6px);
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.button {
+    background-color: #0A1219;
+    color: white;
+    padding: 10px;
+    position:relative;
+    top:24%
+
+}
+.link {
+    color: white;
+}
+.link:hover {
+    text-decoration: none;
+    color:darkgray
+}
+.glyphicon {
+    font-size: 45px;
+    color: white;
+    text-shadow: 1px 1px black;
+}

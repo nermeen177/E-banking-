@@ -22,6 +22,7 @@ h1 {
     text-align: center;
     text-shadow: 2px 2px black;
 }
+
 input,
 select,
 textarea {
@@ -82,7 +83,7 @@ textarea {
     justify-content: center;
     align-items: center;
     margin: auto;
-    box-shadow: 1px 1px 5px 2px lightgrey;
+    box-shadow: 1px 1px 5px 1.2px lightgrey;
     background-color: white;
     align-self: center;
     color: white;
@@ -158,5 +159,9 @@ input[type="file"] {
 
 .field-validation-error {
     display: block;
+}
+
+#pay {
+   background-color: #091F25
 }
 

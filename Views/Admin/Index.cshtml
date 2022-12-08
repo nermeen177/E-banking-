@@ -1,9 +1,39 @@
 ﻿
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
-<span class="label label-info">@Html.ActionLink("Add User", "AddUser", "Admin")</span>
-<span class="label label-info">@Html.ActionLink("View Feedback", "ViewFeedback", "Admin")</span>
-<span class="label label-info">@Html.ActionLink("View User's Details", "ViewDetails", "Admin")</span>
+<link href="~/Content/personPage.css" rel="stylesheet" />
+<body>
+    <h1>E-Banking</h1>
+    <hr />
+    <br />
+    <div class="transactionContainer">
+        <div class="row">
+            <div class="col-xs-3 col-md-3 col">
+                <div class="inner">
+                   
+                    <center><span class="glyphicon glyphicon-user" aria-hidden="true"></span></center>
+                    <span class="label button">@Html.ActionLink("Add User", "AddUser", "Admin", new { @class = "link" })</span>
+                </div>
+            </div>
+
+            <div class="col-xs-3 col-md-3 col">
+                <div class="inner">
+                    <center><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></center>
+                    <span class="label button">@Html.ActionLink("View Feedback", "ViewFeedback", "Admin", new { @class = "link" })</span>
+                </div>
+            </div>
+            <div class="col-xs-3 col-md-3 col">
+                <div class="inner">
+                    <center><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></center>
+                    <span class="label button">@Html.ActionLink("View User's Details", "ViewDetails", "Admin", new { @class = "link" })</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
 
