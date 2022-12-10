@@ -3,10 +3,33 @@
     ViewBag.Title = "ViewFeedback";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="~/Content/view.css" rel="stylesheet" />
 
-@foreach (var X in Model)
-{
-    <h2>@X.message</h2>
-}
+<body id="viewFeedbackPage">
+    <h1>users' Feedbacks</h1>
+    <div class="container">
+        <div id="tableContainer" class="tableFixHead">
+            <table id="transactions_table">
+                <thead>
+                    <tr>
+                        <th>User Account-Number</th>
+                        <th>Feedback</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var x in Model)
+                    {
+                        <tr>
+                            <td>@x.user_id</td>
+                            <td>@x.message</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+
 
 

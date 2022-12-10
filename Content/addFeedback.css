@@ -1,0 +1,99 @@
+﻿#addFeedbackPage
+{
+    background: url('../Images/personB.jpg') no-repeat center center/cover;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.userButton {
+    padding: 10px 50px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    background-color: #0A1219
+}
+
+    .userButton:hover
+    {
+        color:white
+    }
+    .text-danger {
+        display: block;
+    }
+
+.formCSS {
+    max-width: 550px;
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    box-shadow: 1px 1px 5px 1.2px lightgrey;
+    background-color: white;
+    align-self: center;
+    color: white;
+    background-color: rgba(255,255,255,.1);
+    backdrop-filter: blur(6px);
+    padding:20px;
+    margin-top: 4%;
+}
+
+    .formCSS h2 {
+        text-align: center;
+        font-weight: 700;
+        display: block;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-shadow: 2px 2px black;
+    }
+
+    .formCSS .control-label {
+        text-align: left;
+        display: block;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+@media screen and (min-width: 992px) {
+    .formCSS .control-label {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+
+    .loginForm {
+        display: flex;
+        height: 500px;
+        width: 100%;
+    }
+}
+
+.formCSS .form-horizontal .form-group {
+    margin-right: 0px;
+    margin-left: 0px;
+    display: block;
+}
+
+.formCSS .form-control {
+    width: 90%;
+    max-width: 90%;
+    border: 1px solid lightgrey;
+    background: transparent;
+    color: lightgrey;
+    outline: none;
+    height: 120px;
+    max-height: 120px;
+    font-size: 20px;
+    padding: 5px;
+    resize: none;
+}
+
+
+.formCSS div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.field-validation-error {
+    display: block;
+}
+

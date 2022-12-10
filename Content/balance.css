@@ -1,0 +1,54 @@
+﻿#balancePage {
+    background: url('../Images/personB.jpg') no-repeat center center/cover;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    color: white;
+    height: 100vh
+}
+
+.thumbnail {
+    border: none;
+    width:100%
+}
+
+.row {
+    box-shadow: 1px 1px 5px 1.2px lightgrey;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+    background-color: rgba(255,255,255,.1);
+    backdrop-filter: blur(15px);
+    margin-top:15%
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px black;
+}
+
+.thumbnail {
+    background: transparent;
+}
+
+span {
+    font-size: 35px;
+    text-shadow: 1px 1px white;
+    font-weight: 800;
+    color: #0A1219
+}
+footer {
+    position: absolute;
+    bottom: 5px;
+    width: inherit
+}
+
+
+@media screen and (max-width: 991px) {
+    footer {
+        width: 95%
+    }
+}
+

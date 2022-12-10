@@ -168,10 +168,11 @@
     <Compile Include="Models\Transcation.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ViewTransaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\addFeedback.css" />
+    <Content Include="Content\balance.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -179,6 +180,7 @@
     <Content Include="Content\form.css" />
     <Content Include="Content\personPage.css" />
     <Content Include="Content\userDetails.css" />
+    <Content Include="Content\view.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

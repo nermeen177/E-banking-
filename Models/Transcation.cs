@@ -21,11 +21,9 @@ namespace E_banking.Models
         public int sender_id { get; set; }
 
         [Required(ErrorMessage = "You have to enter Account-Number.")]
-
         public int receiver_id { get; set; }
 
         [Required(ErrorMessage = "You have to enter the amount")]
-
         public double amount { get; set; }
     
         public virtual Customer Customer { get; set; }

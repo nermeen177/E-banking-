@@ -1,0 +1,84 @@
+﻿#viewTransactionPage, #viewFeedbackPage {
+    background: url('../Images/personB.jpg') no-repeat center center/cover;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    color: white;
+}
+h1 {
+    text-align: center;
+    text-shadow: 2px 2px black;
+    font-weight:bold;
+    margin-bottom:20px;
+    font-size:40px
+}
+.tableFixHead tbody::-webkit-scrollbar {
+    width: 10px;
+}
+
+.tableFixHead tbody::-webkit-scrollbar-track {
+    background-color: rgba(255,255,255,.8);
+    border-radius: 100px;
+}
+
+.tableFixHead tbody::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,.6+);
+    border-radius: 100px;
+}
+
+.btn {
+    background-color: #0A1219;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+    text-shadow: 1px 1px grey;
+    margin-bottom:10px;
+
+}
+
+.btn_container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0;
+}
+
+.tableFixHead {
+    table-layout: fixed;
+    border-collapse: collapse;
+    box-shadow: 1px 1px 5px 1.2px lightgrey;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    background-color: rgba(255,255,255,.1);
+    backdrop-filter: blur(12px);
+}
+
+
+    .tableFixHead tbody {
+        display: block;
+        width: 100%;
+        overflow: auto;
+        height: 400px;
+    }
+
+    .tableFixHead thead tr {
+        display: block;
+        background-color: rgba(255,255,255,.1);
+        backdrop-filter: blur(12px);
+    }
+
+    .tableFixHead th,
+    .tableFixHead td {
+        padding: 5px 10px;
+        width: 250px;
+        text-align: center;
+        font-size: 20px;
+        text-shadow: 1px 1px black;
+    }
+
+    .tableFixHead tbody tr {
+        border-bottom: 1px solid white;
+        height: 50px
+    }

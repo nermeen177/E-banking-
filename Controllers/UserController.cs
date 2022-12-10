@@ -58,6 +58,7 @@ namespace E_banking.Controllers
         [HttpPost]
         public ActionResult AddFeedback(feedback msg)
         {
+
             msg.user_id = userId;
             db.feedbacks.Add(msg);
             db.SaveChanges();
@@ -82,7 +83,6 @@ namespace E_banking.Controllers
                 transcation.sender_id = userId;
                 UpdatingOnBalance(transcation.amount);
                 UpdatingBalance(transcation.amount, transcation.receiver_id);
-
                 db.Transcations.Add(transcation);
                 db.SaveChanges();
                 return View();
@@ -98,19 +98,10 @@ namespace E_banking.Controllers
 
         public ActionResult ViewTransaction()
         {
-            ViewTransaction view = new ViewTransaction();
             transcations = db.Transcations.Where(a => a.sender_id == userId).ToList();
             bills = db.bills.Where(a => a.user_id == userId).ToList();
-            for (int i = 0; i < transcations.Count; i++)
-            {
-                view.Transcation = transcations[i];
-            }
-            for (int i = 0; i < bills.Count; i++)
-            {
-                view.Bill = bills[i];
-            }
-
-            return View(view);
+            ViewBag.bills = bills;
+            return View(transcations);
 
         }
     

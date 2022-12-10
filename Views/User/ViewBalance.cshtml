@@ -3,6 +3,18 @@
     ViewBag.Title = "ViewBalance";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="~/Content/balance.css" rel="stylesheet" />
+<body id="balancePage">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col" style="background: transparent">
+                <div class="thumbnail">
+                    <h1>Your Current Balance Is: <span>@Model.balance</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<h2>@Model.balance</h2>
+</body>
+
 

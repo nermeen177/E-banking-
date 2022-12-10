@@ -1,15 +1,82 @@
-﻿@model E_banking.Models.ViewTransaction
+﻿@model List<E_banking.Models.Transcation>
+
 @{
     ViewBag.Title = "ViewTransaction";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<link href="~/Content/view.css" rel="stylesheet" />
 
-<h2>@Model.Transcation.receiver_id</h2>
-<p>@Model.Transcation.sender_id</p>
-<p>@Model.Transcation.amount</p>
-<p>@Model.Bill.amount</p>
-<p>@Model.Bill.code_number</p>
+<body id="viewTransactionPage">
+
+    <div class="container feedbackContainer">
+        <div class="btn_container">
+            <button class="btn" onclick="toggleTable(0)">Transfer Money Transactions</button>
+            <button class="btn" onclick="toggleTable(1)">Paying Bills Transactions</button>
+        </div>
+        <div id="tableContainer" class="tableFixHead">
+            <table id="transactions_table">
+                <thead>
+                    <tr>
+                        <th>Transaction_Id</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var t in Model)
+                    {
+                        <tr>
+                            <td>@t.id</td>
+                            <td>@t.sender_id</td>
+                            <td>@t.receiver_id</td>
+                            <td>@t.amount</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <table id="bills_table" style="display:none">
+                <thead>
+                    <tr>
+                        <th>Transaction_Id</th>
+                        <th>Bill Type_Id</th>
+                        <th>Code</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var t in ViewBag.bills)
+                    {
+                        <tr>
+                            <td>@t.id</td>
+                            <td>@t.type_id</td>
+                            <td>@t.code_number</td>
+                            <td>@t.amount</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+<script>
+    const tt = document.getElementById("transactions_table")
+    const bb = document.getElementById("bills_table")
+
+    function toggleTable(index) {
+        if (index == 0) {
+            tt.style.display = 'block';
+            bb.style.display = 'none';
+        } else {
+            tt.style.display = 'none';
+            bb.style.display = 'block';
+        }
+    }
+</script>
+
 
 
 
