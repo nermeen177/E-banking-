@@ -172,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\addFeedback.css" />
+    <Content Include="Content\backIcon.css" />
     <Content Include="Content\balance.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

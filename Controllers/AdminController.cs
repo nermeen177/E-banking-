@@ -26,8 +26,12 @@ namespace E_banking.Controllers
         [HttpPost]
         public ActionResult AddUser(Customer customer)
         {
-            db.Customers.Add(customer);
-            db.SaveChanges();
+            if(customer.balance>0 && customer.username!= null && customer.name != null && customer.username != null && customer.email != null)
+            {
+                ViewBag.success = "user added successfully";
+                db.Customers.Add(customer);
+                db.SaveChanges();
+            }           
             return View();
         }
 

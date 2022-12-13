@@ -4,7 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/userDetails.css" rel="stylesheet" />
+<link href="~/Content/backIcon.css" rel="stylesheet" />
+
 <body id="userDetailsPage">
+    <a href=@Url.Action("Index","Admin")><span class="glyphicon glyphicon-chevron-left back" aria-hidden="true"></span></a>
     <script>
         var searchKey = document.gitElementById('search').value;
     </script>

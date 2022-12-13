@@ -6,9 +6,10 @@
 }
 
 <link href="~/Content/view.css" rel="stylesheet" />
+<link href="~/Content/backIcon.css" rel="stylesheet" />
 
 <body id="viewTransactionPage">
-
+    <a href=@Url.Action("Index","User",new { id = @ViewBag.id})><span class="glyphicon glyphicon-chevron-left back" aria-hidden="true"></span></a>
     <div class="container feedbackContainer">
         <div class="btn_container">
             <button class="btn" onclick="toggleTable(0)">Transfer Money Transactions</button>

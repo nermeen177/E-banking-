@@ -24,14 +24,13 @@ namespace E_banking.Models
             this.Transcations1 = new HashSet<Transcation>();
         }
 
+
         public int acc_Number { get; set; }
 
-
-        [Required(ErrorMessage = "You have to select gender.")]
+        [Required(ErrorMessage = "You have to enter the gender.")]
         public string gender { get; set; }
 
-
-        [Required(ErrorMessage = "You have to enter the balance .")]
+        [Required(ErrorMessage = "You have to enter the balance.")]
         public double balance { get; set; }
 
         [Required(ErrorMessage = "You have to enter name .")]
@@ -39,10 +38,10 @@ namespace E_banking.Models
         public string name { get; set; }
 
 
-        [Required(ErrorMessage = "You have to enter email .")]
+        [Required(ErrorMessage = "You have to enter the email .")]
         public string email { get; set; }
 
-        [Required(ErrorMessage = "You have to enter username.")]
+        [Required(ErrorMessage = "You have to enter username .")]
         [StringLength(maximumLength: 50, ErrorMessage = "Maximum 50 characters.")]
         public string username { get; set; }
 

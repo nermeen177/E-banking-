@@ -4,8 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/view.css" rel="stylesheet" />
+<link href="~/Content/backIcon.css" rel="stylesheet" />
 
 <body id="viewFeedbackPage">
+    <a href=@Url.Action("Index","Admin")><span class="glyphicon glyphicon-chevron-left back" aria-hidden="true"></span></a>
     <h1>users' Feedbacks</h1>
     <div class="container">
         <div id="tableContainer" class="tableFixHead">

@@ -4,33 +4,36 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/addFeedback.css" rel="stylesheet" />
+<link href="~/Content/backIcon.css" rel="stylesheet" />
 
-
-@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-@Html.HiddenFor(model => model.user_id)
 
 <body id="addFeedbackPage">
+   <a href=@Url.Action("Index","User",new { id = @ViewBag.id})><span class="glyphicon glyphicon-chevron-left back" aria-hidden="true"></span></a>
     <div class="loginForm">
         <div class="formCSS">
 
             @using (Html.BeginForm())
             {
+
                 @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.user_id)
 
             <div class="form-horizontal" style="display : block;">
                 <h2> Add Feedback </h2>
-                <hr /><br /><br /> 
+                <hr /><br /><br />
+                <label class="control-label col-md-12" style="font-weight: 800; color:white; text-shadow:2px 2px black">@ViewBag.success</label>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                 <div class="form-group">
                     <div class="col-md-12 password">
-                        @Html.TextAreaFor(model => model.message, new { @class = "form-control msg", @MaxLength = "200" } )
+                        @Html.TextAreaFor(model => model.message, new { @class = "form-control msg", @MaxLength = "200" })
                     </div>
                     @Html.ValidationMessageFor(model => model, "", new { @class = "text-danger control-label col-md-12" })
                 </div>
-
+                <label class="text-danger control-label col-md-12" style="font-weight: 600;">@ViewBag.Error</label>
                 <div class="col-md-12">
-                    <input type="submit" value="Add" class="btn userButton" />
+                    <input type="submit" value="Add" class="btn userButton" onclick="displayAlert()" />
                 </div>
             </div>
             }

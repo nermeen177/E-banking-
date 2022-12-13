@@ -4,7 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/balance.css" rel="stylesheet" />
+<link href="~/Content/backIcon.css" rel="stylesheet" />
+
 <body id="balancePage">
+    <a href=@Url.Action("Index","User",new { id = @Model.acc_Number})><span class="glyphicon glyphicon-chevron-left back" aria-hidden="true"></span></a>
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col" style="background: transparent">

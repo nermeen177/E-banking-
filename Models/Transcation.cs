@@ -11,19 +11,12 @@ namespace E_banking.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Transcation
     {
         public int id { get; set; }
-
-
         public int sender_id { get; set; }
-
-        [Required(ErrorMessage = "You have to enter Account-Number.")]
         public int receiver_id { get; set; }
-
-        [Required(ErrorMessage = "You have to enter the amount")]
         public double amount { get; set; }
     
         public virtual Customer Customer { get; set; }

@@ -15,10 +15,14 @@ namespace E_banking.Models
 
     public partial class feedback
     {
+
         public int id { get; set; }
+
+        [Required]
         public int user_id { get; set; }
 
-        [Required(ErrorMessage = "You have to enter a feedback.")]
+
+        [Required(ErrorMessage = "You have to enter a feedback .")]
         public string message { get; set; }
     
         public virtual Customer Customer { get; set; }

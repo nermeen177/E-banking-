@@ -14,6 +14,7 @@ namespace E_banking.Controllers
         static int userId;
         private List<Transcation> transcations = new List<Transcation>();
         private List<bill> bills = new List<bill>();
+         
         // GET: User
         public ActionResult Index(int id)
         {
@@ -24,18 +25,21 @@ namespace E_banking.Controllers
         [HttpGet]
         public ActionResult NewTransaction()
         {
+          
+            ViewBag.id = userId;
             return View();
-
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult NewTransaction(bill bill)
         {
+            ViewBag.id = userId;
             Customer cust = new Customer();
             cust = db.Customers.Where(a => a.acc_Number == userId).FirstOrDefault();
-            if (cust.balance >= bill.amount)
+            if (cust.balance >= bill.amount && bill.amount>0)
             {
+                ViewBag.success = "transaction done successfully";
                 bill.user_id = userId;
                 UpdatingOnBalance(bill.amount);
                 db.bills.Add(bill);
@@ -44,7 +48,10 @@ namespace E_banking.Controllers
             }
             else
             {
-                ViewBag.Error = "Your Balance Is Not Enough";
+                if(bill.amount > 0)
+                {
+                    ViewBag.Error = "Your Balance Is Not Enough";
+                }          
                 return View();
             }
         }
@@ -52,16 +59,24 @@ namespace E_banking.Controllers
         [HttpGet]
         public ActionResult AddFeedback()
         {
-
+            ViewBag.id = userId;
             return View();
         }
         [HttpPost]
         public ActionResult AddFeedback(feedback msg)
         {
-
-            msg.user_id = userId;
-            db.feedbacks.Add(msg);
-            db.SaveChanges();
+            if(msg.message != null)
+            {
+                ViewBag.success = "feedback sent successfully";
+                ViewBag.id = userId;
+                msg.user_id = userId;
+                db.feedbacks.Add(msg);
+                db.SaveChanges();
+            }  
+            else
+            {
+                ViewBag.Error = "you have to enter feedback";
+            }
             return View();
         }
 
@@ -78,8 +93,9 @@ namespace E_banking.Controllers
             ViewBag.senderId = userId;
             Customer cust = new Customer();
             cust = db.Customers.Where(a => a.acc_Number == userId).FirstOrDefault();
-            if (cust.balance >= transcation.amount)
+            if (cust.balance >= transcation.amount && transcation.amount > 0)
             {
+                ViewBag.success = "transaction done successfully";
                 transcation.sender_id = userId;
                 UpdatingOnBalance(transcation.amount);
                 UpdatingBalance(transcation.amount, transcation.receiver_id);
@@ -89,7 +105,10 @@ namespace E_banking.Controllers
             }
             else
             {
-                ViewBag.Error = "Your Balance Is Not Enough";
+                if(transcation.amount > 0)
+                {
+                    ViewBag.Error = "Your Balance Is Not Enough";
+                }              
                 return View();
             }
         }
@@ -101,6 +120,7 @@ namespace E_banking.Controllers
             transcations = db.Transcations.Where(a => a.sender_id == userId).ToList();
             bills = db.bills.Where(a => a.user_id == userId).ToList();
             ViewBag.bills = bills;
+            ViewBag.id = userId;
             return View(transcations);
 
         }

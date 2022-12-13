@@ -121,10 +121,6 @@ input[type="file"] {
         padding-right: 60px;
     }
 
-    input[type="file"] {
-        padding-left: 0px;
-    }
-
     .loginForm {
         display: flex;
         height: 500px;

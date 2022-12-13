@@ -1,0 +1,17 @@
+﻿.back {
+    font-size: 50px;
+    color: white;
+    text-shadow: 3px 3px black;
+    margin-left: 1%;
+    position: absolute;
+    top: 45%;
+    -ms-transform: translateY(-45%);
+    transform: translateY(-45%)
+}
+@media screen and (max-width: 991px)
+{
+    .back
+    {
+        display:none
+    }
+}
